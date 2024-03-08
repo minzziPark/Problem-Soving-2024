@@ -1,0 +1,31 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      const solution = (cnt, arr) => {
+        let idx = 0;
+        let max = 0;
+        for (let i = 0; i < cnt; i++) {
+          let num = arr[i];
+          let sum = 0;
+          while (num !== 0) {
+            sum += num % 10;
+            num = ~~(num / 10);
+          }
+          console.log(sum);
+          if (max < sum || (max === sum && arr[idx] < arr[i])) {
+            idx = i;
+            max = sum;
+          }
+        }
+        return arr[idx];
+      };
+
+      let arr = [128, 460, 603, 40, 521, 137, 123];
+      console.log(solution(7, arr));
+    </script>
+  </body>
+</html>
