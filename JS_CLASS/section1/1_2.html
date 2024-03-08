@@ -1,0 +1,16 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      const solution = (A, B, C) => {
+        const sum = A + B + C;
+
+        return Math.max(A, B, C) >= sum - Math.max(A, B, C) ? "NO" : "YES";
+      };
+      console.log(solution(13, 33, 17));
+    </script>
+  </body>
+</html>
