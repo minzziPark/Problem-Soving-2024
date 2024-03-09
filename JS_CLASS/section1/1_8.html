@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      const solution = (arr) => {
+        let len = arr.length;
+        let twoFalse = arr.reduce((a, b) => (a += b), 0) - 100;
+        console.log(twoFalse);
+        for (let i = 0; i < len - 1; i++) {
+          for (let j = i + 1; j < len; j++) {
+            if (arr[i] + arr[j] === twoFalse) {
+              arr.splice(j, 1);
+              arr.splice(i, 1);
+              return arr;
+            }
+          }
+        }
+        return arr;
+      };
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
