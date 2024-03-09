@@ -1,0 +1,18 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      const solution = (arr) => {
+        arr = arr.filter((a) => a % 2 === 1);
+        console.log(arr.reduce((a, b) => (a += b), 0));
+        console.log(Math.min(...arr));
+      };
+
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
