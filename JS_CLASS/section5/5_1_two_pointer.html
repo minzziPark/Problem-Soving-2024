@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      const solution = (a, b) => {
+        let a_last = a.length - 1;
+        let b_last = b.length - 1;
+        let a_curr = 0,
+          b_curr = 0;
+        let answer = [];
+
+        while (true) {
+          if (a[a_curr] < b[b_curr]) {
+            answer.push(a[a_curr]);
+            if (a_curr !== a_last) a_curr++;
+            else if (b_curr === b_last) break;
+          } else if (a[a_curr] > b[b_curr]) {
+            answer.push(b[b_curr]);
+            if (b_curr !== b_last) b_curr++;
+            else if (a_curr === a_last) break;
+          } else {
+            answer.push(a[a_curr]);
+            answer.push(b[b_curr]);
+            if (a_curr !== a_last) {
+              a_curr++;
+              if (b_curr !== b_last) b_curr++;
+            } else {
+              if (b_curr === b_last) break;
+              else b_curr++;
+            }
+          }
+        }
+      };
+
+      let a = [1, 3, 5];
+      let b = [2, 3, 6, 7, 9];
+      console.log(solution(a, b));
+    </script>
+  </body>
+</html>
