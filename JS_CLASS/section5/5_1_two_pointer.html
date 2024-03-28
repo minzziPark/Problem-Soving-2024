@@ -6,33 +6,21 @@
   <body>
     <script>
       const solution = (a, b) => {
+        let a_idx = 0;
         let b_idx = 0;
         let pointer_a = a[0];
         let pointer_b = b[0];
         let result = [];
 
-        for (let a_idx = 0; a_idx < a.length; a_idx++) {
-          if (b_idx === b.length) {
-            result.push(a[a_idx]);
+        while (a_idx !== a.length && b_idx !== b.length) {
+          if (a[a_idx] >= b[b_idx]) {
+            result.push(b[b_idx++]);
           } else {
-            if (a[a_idx] > b[b_idx]) {
-              result.push(b[b_idx]);
-              b_idx += 1;
-              a_idx -= 1;
-            } else if (a[a_idx] < b[b_idx]) {
-              result.push(a[a_idx]);
-            } else {
-              result.push(a[a_idx]);
-              result.push(b[b_idx]);
-              b_idx += 1;
-            }
+            result.push(a[a_idx++]);
           }
         }
-        if (b_idx < b.length) {
-          for (let i = b_idx; i < b.length; i++) {
-            result.push(b[i]);
-          }
-        }
+        while (b_idx < b.length) result.push(b[b_idx++]);
+        while (a_idx < a.length) result.push(a[a_idx++]);
 
         return result;
       };
