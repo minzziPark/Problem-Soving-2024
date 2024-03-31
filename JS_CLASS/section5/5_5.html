@@ -10,8 +10,7 @@
         let temp = 0;
         for (let i = 0; i < arr.length; i++) {
           if (i < k) {
-            answer += arr[i];
-            temp = answer;
+            temp += arr[i];
           } else {
             console.log("temp1", temp);
             temp = temp + arr[i] - arr[i - k];
