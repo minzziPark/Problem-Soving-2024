@@ -15,9 +15,7 @@
             console.log("temp1", temp);
             temp = temp + arr[i] - arr[i - k];
             console.log("temp2: ", temp, ", answer: ", answer);
-            if (answer < temp) {
-              answer = temp;
-            }
+            answer = Math.max(answer, temp);
           }
         }
         return answer;
